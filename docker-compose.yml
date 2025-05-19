@@ -1,0 +1,12 @@
+services:
+  python:
+    build: ./python
+    volumes:
+      - ./data:/data
+
+  go:
+    build: ./go
+    depends_on:
+      - python
+    volumes:
+      - ./data:/data
